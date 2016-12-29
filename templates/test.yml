@@ -1,10 +1,24 @@
-{USERPROFILE}:
+{{ USERPROFILE }}:
     - test:
-        - "{admin}_ADMIN_DIR":
+        - "{{ admin }}_ADMIN_DIR":
             - data
             - notebooks
-        - "{dir1}"
-        - "{dir2}"
-        
-{SYSTEMDRIVE}:
-    - "__{admin}TEST"
+        {% for content in contents -%}
+        - {{ content }}:
+            {% for grade in grades -%}
+                {% if  content != "SCIENCE" or grade in ('5', '8') -%}
+            - {{ content[0] }}{{ grade }}:
+                - start
+                - end
+                - middle
+                - calibrations
+                {% endif %}
+            {% endfor %}
+            - other things
+            - junk
+            - tests
+        {% endfor %}
+
+
+"{{ SYSTEMDRIVE }}":
+    - "__{{ admin }}TEST"

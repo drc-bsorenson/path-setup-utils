@@ -1,6 +1,6 @@
 "J:":
     - PA:
-        - "{admin}":
+        - "{{ admin }}":
             - Math: &id001
                 - Data Files:
                     - Calibration
@@ -20,7 +20,7 @@
             - ELA: *id001
             - Science: *id001
                 
-        - "{admin[0]}00s":
+        - "{{ admin[0] }}00s":
             - Tech Reports:
                 - Appendices:
                      - to PUBS
@@ -36,10 +36,10 @@
                 - from PAS
                 - from PUBS
     
-{SYSTEMDRIVE}:
+"{{ SYSTEMDRIVE }}":
     - PA:
         - PSSA:
-            - EPA{admin}:
+            - EPA{{ admin }}:
                 - DOTS
                 - notebooks
                 - plots
