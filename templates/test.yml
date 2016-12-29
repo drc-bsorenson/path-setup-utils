@@ -1,0 +1,10 @@
+{USERPROFILE}:
+    - test:
+        - "{admin}_ADMIN_DIR":
+            - data
+            - notebooks
+        - "{dir1}"
+        - "{dir2}"
+        
+{SYSTEMDRIVE}:
+    - "__{admin}TEST"
