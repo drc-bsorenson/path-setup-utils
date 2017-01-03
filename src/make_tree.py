@@ -15,7 +15,7 @@ def walk_tree(node, root=None):
             branch = os.path.join(branch, os.sep)
         if children is None:
             yield os.path.join(root, branch)
-        if isinstance(children, dict):
+        else:
             yield from walk_tree(children, os.path.join(root, branch))
 
 
