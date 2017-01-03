@@ -1,0 +1,13 @@
+J:\{{ state }}\{{ project }}\Ben : &my-tree
+  code:
+     ? notebooks
+     ? scripts
+  output:
+    ? tables
+    ? plots
+  ? documentation
+  ? _test
+
+{{ SYSTEMDRIVE }}\{{ state }}\{{ project }}: 
+  << : *my-tree
+  ? data

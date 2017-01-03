@@ -13,13 +13,10 @@ def walk_tree(node, root=None):
     for branch, children in node.items():
         if branch.strip().endswith(':'):
             branch = os.path.join(branch, os.sep)
-        for child in children:
-            if child is None:
-                continue
-            if isinstance(child, dict):
-                yield from walk_tree(child, os.path.join(root, branch))
-            else:
-                yield os.path.join(root, branch, child)
+        if children is None:
+            yield os.path.join(root, branch)
+        if isinstance(children, dict):
+            yield from walk_tree(children, os.path.join(root, branch))
 
 
 def make_tree(template, **kwargs):
@@ -37,6 +34,7 @@ def main(template, mapping, template_path=PATH_DFLT_TEMPLATES, dry_run=False):
     template = open(template).read()
     kwargs = {v[0]: v[1] if len(v) == 2 else v[1:] for v in mapping}
     tree = make_tree(template, **kwargs)
+
     for path in walk_tree(tree):
         if os.path.exists(path):
             print('Skipping: "%s" Already Exists' % path)
