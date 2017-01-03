@@ -1,57 +1,53 @@
-"J:":
-    - PA:
-        - "{{ admin }}":
-            - Math: &id001
-                - Data Files:
-                    - Calibration
-                    - Daily
-                    - Field Test
-                    - Key Validation
-                - Equating:
-                    - Calibration
-                    - Field Test
-                    - Key Validation
-                - Item Analysis:
-                    - Calibration Data
-                    - Field Test
-                    - Key Validation
-                - Item Banking
-                - Winsteps
-            - ELA: *id001
-            - Science: *id001
-                
-        - "{{ admin[0] }}00s":
-            - Tech Reports:
-                - Appendices:
-                     - to PUBS
-                - Chapters:
-                    - ready for internal review
-                    - ready for text update
-                    - to PUBS
-                - Data Files:
-                    - PDE
-                    - PS
-                - Final
-                - from EIS
-                - from PAS
-                - from PUBS
-    
-"{{ SYSTEMDRIVE }}":
-    - PA:
-        - PSSA:
-            - EPA{{ admin }}:
-                - DOTS
-                - notebooks
-                - plots
-                - tables
-                - data
-                - Tech Report:
-                    - Data
-                    - plots
-                    - tables
-                - SpringAnalysis:
-                    - data
-                    - ELA
-                    - MATH
-                    - SCIENCE
-                    - FinalEquating
+J:\PA:
+  - "{{ admin }}":
+    - Math: &content-tree
+      - Data Files:
+        - Calibration
+        - Daily
+        - Field Test
+        - Key Validation
+      - Equating:
+        - Calibration
+        - Field Test
+        - Key Validation
+      - Item Analysis:
+        - Calibration Data
+        - Field Test
+        - Key Validation
+      - Item Banking
+      - Winsteps
+    - ELA: *content-tree
+    - Science: *content-tree
+      
+  - "{{ admin[0] }}00s":
+    - Tech Reports:
+      - Appendices:
+         - to PUBS
+      - Chapters:
+        - ready for internal review
+        - ready for text update
+        - to PUBS
+      - Data Files:
+        - PDE
+        - PS
+      - Final
+      - from EIS
+      - from PAS
+      - from PUBS
+  
+{{ SYSTEMDRIVE }}\PA\PSSA\EPA{{ admin }}:
+  - DOTS
+  - notebooks
+  - plots
+  - tables
+  - data
+  - Tech Report:
+    - Data
+    - plots
+    - tables
+  - SpringAnalysis:
+    - data
+    - ELA
+    - MATH
+    - SCIENCE
+    - FinalEquating

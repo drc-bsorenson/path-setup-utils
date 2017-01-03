@@ -1,4 +1,4 @@
-{{ USERPROFILE }}:
+{{ USERPROFILE }}\:
     - test:
         - "{{ admin }}_ADMIN_DIR":
             - data
@@ -18,6 +18,6 @@
                 - junk
                 - tests
             {% endfor %}
-
-"{{ SYSTEMDRIVE }}":
+            
+{{ SYSTEMDRIVE }}\:
     - "__{{ admin }}TEST"
