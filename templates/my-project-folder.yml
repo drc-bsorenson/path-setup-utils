@@ -1,7 +1,11 @@
-J:\{{ state }}\{{ project }}\Ben : &my-tree
+J:\{{ state }}\{{ project }}\Ben: &my-tree
   code:
      ? notebooks
-     ? scripts
+     scripts:
+        ? python
+        ? R
+        ? SQL
+        ? SPSS
   output:
     ? tables
     ? plots

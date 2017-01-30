@@ -21,13 +21,14 @@ def walk_tree(node, root=None):
 
 def make_tree(template, **kwargs):
     template = jj.Template(template)
+    print(template.render(**dict(os.environ, **kwargs)))
     return yaml.load(template.render(**dict(os.environ, **kwargs)))
 
 
 def main(template, mapping, template_path=PATH_DFLT_TEMPLATES, dry_run=False):
 
     if dry_run:
-        print('DRY RUN! No, paths will be created.')
+        print('DRY RUN! No paths will be created.')
     if not os.path.exists(template):
         template = os.path.join(template_path, template)
 
