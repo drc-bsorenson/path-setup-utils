@@ -21,7 +21,7 @@ def walk_tree(node, root=None):
 
 def make_tree(template, **kwargs):
     template = jj.Template(template)
-    print(template.render(**dict(os.environ, **kwargs)))
+    # print(template.render(**dict(os.environ, **kwargs)))
     return yaml.load(template.render(**dict(os.environ, **kwargs)))
 
 
