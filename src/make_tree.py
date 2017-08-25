@@ -1,9 +1,11 @@
-import os
-import yaml
 import argparse
-import jinja2 as jj
+import os
 
-PATH_DFLT_TEMPLATES = os.path.join(os.path.split(os.path.abspath(__file__))[0], '../templates')
+import jinja2 as jj
+import yaml
+
+PATH_DFLT_TEMPLATES = os.path.join(
+    os.path.split(os.path.abspath(__file__))[0], '../templates')
 PATH_DFLT_TEMPLATES = os.path.abspath(PATH_DFLT_TEMPLATES)
 
 
@@ -48,11 +50,19 @@ def main(template, mapping, template_path=PATH_DFLT_TEMPLATES, dry_run=False):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('template', help='Name of template file')
-    parser.add_argument('-m', '--mapping', nargs='+', action='append',
-                        help='key, value mapping pairs to fill in template')
-    parser.add_argument('-d', '--dry-run', dest='dry_run', help=('Print directories that will be created, but'
-                                                                 "don't create them"),
-                        action='store_true')
+    parser.add_argument(
+        '-m',
+        '--mapping',
+        nargs='+',
+        action='append',
+        help='key, value mapping pairs to fill in template')
+    parser.add_argument(
+        '-d',
+        '--dry-run',
+        dest='dry_run',
+        help=('Print directories that will be created, but'
+              "don't create them"),
+        action='store_true')
     parser.set_defaults(dry_run=False)
 
     main(**vars(parser.parse_args()))
