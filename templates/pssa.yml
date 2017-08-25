@@ -1,32 +1,33 @@
 J:\PA:
-  "{{ admin }}\\_SpringAnalysis":
+  "{{ admin }}":
     Test Construction:
       Form Scrambling:
         Math: &scrambling-tree
-          ?From TD
-          ?Modified Templates
-          ?Output to TD
+          ? From TD
+          ? Modified Templates
+          ? Output to TD
         ELA: *scrambling-tree
         Science: *scrambling-tree
-    Math: &content-tree
-      Data Files:
-        ? Calibration
-        ? Daily
-        ? Field Test
-        ? Key Validation
-      Equating:
-        ? Calibration
-        ? Field Test
-        ? Key Validation
-      Item Analysis:
-        ? Calibration Data
-        ? Field Test
-        ? Key Validation
-      ? Item Banking
-      ? Winsteps
-    ELA: *content-tree
-    Science: *content-tree
-      
+    _SpringAnalysis:
+      Math: &content-tree
+        Data Files:
+          ? Calibration
+          ? Daily
+          ? Field Test
+          ? Key Validation
+        Equating:
+          ? Calibration
+          ? Field Test
+          ? Key Validation
+        Item Analysis:
+          ? Calibration Data
+          ? Field Test
+          ? Key Validation
+        ? Item Banking
+        ? Winsteps
+      ELA: *content-tree
+      Science: *content-tree
+    
   "{{ admin[0] }}00s":
     Tech Reports:
       Appendices:
