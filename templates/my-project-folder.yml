@@ -1,4 +1,4 @@
-J:\{{ state }}\{{ project }}\Ben: &my-tree
+{{ PS_DRIVE }}\{{ state }}\{{ project }}\Ben: &my-tree
   code:
      ? notebooks
      scripts:
@@ -9,9 +9,11 @@ J:\{{ state }}\{{ project }}\Ben: &my-tree
   output:
     ? tables
     ? plots
+    ? item order
   ? documentation
   ? _test
 
-{{ SYSTEMDRIVE }}\{{ state }}\{{ project }}: 
+{{ PROJ_HOME }}\{{ state }}\E{{ state }}{{ project }}: 
   << : *my-tree
   ? data
+  ? DOTS
