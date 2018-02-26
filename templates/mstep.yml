@@ -1,11 +1,11 @@
 {{ PROJ_HOME }}\MI\EMI{{project}}: &my-tree
-  ?notebooks
+  ? notebooks
   SGP:
-    ?AggData
-    ?AggOut
-  ?SQL
-  ?DOTS
-  ?Target Report Data
+    ? AggData
+    ? AggOut
+  ? SQL
+  ? DOTS
+  ? Target Report Data
   Key Check:
-    ?Files From EIS
-  ?uploads
+    ? Files From EIS
+  ? uploads

@@ -1,0 +1,8 @@
+{{ PS_DRIVE }}CAT\{{ state }}\E{{ state }}{{ project }}:
+  {{ root }}:
+    SimulationSummary:
+      ?BlueprintCheck
+      exposure:
+        ?plots
+      ?plots
+  
