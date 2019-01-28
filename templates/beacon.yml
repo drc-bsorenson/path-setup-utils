@@ -1,0 +1,9 @@
+{{ PROJ_HOME }}\{{ state }}\{{ project }}: &my-tree
+  ? notebooks
+  output:
+    ? tables
+    ? plots
+  ? documentation
+  ? _test
+  ? data
+  ? DOTS
